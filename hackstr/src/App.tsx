@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import { CouchNav } from './components/routing/CouchNav';
@@ -7,17 +7,28 @@ import CouchList from './components/CouchList/CouchList';
 import { userInfo } from 'os';
 import Couch from './components/Couch/Couch';
 import Login from './components/Login/Login';
+import { getUsers, IUser, getUserById } from './http/User';
 
 const App: React.FC = () => {
   const logo={
     borderRadius: '50%',
-    src: 'https://placehold.it/75',
+    height:'75px',
+    width: '75px',
+    src: 'https://cdn.dribbble.com/users/897730/screenshots/4233025/coffeecode-logo.jpg',
   }
-  const user={
-    id:0,
-    email:'this@email.com',
-    phone: 1111111111,
-  }
+  const [currentUser, setCurrentUser]=useState(getUserById(1));
+  console.log(currentUser);
+  const changeUser = async ()=> user= await getUserById(1);
+    changeUser();
+  let user:IUser=JSON.parse(`{
+    "id": 1,
+    "name": null,
+    "email": "this@email.net",
+    "password": null,
+    "phoneNumber": 0,
+    "project": null,
+    "listings": []
+}`);
   return (
     <BrowserRouter>
     <CouchNav username={user.email} iconStyle={logo}/>

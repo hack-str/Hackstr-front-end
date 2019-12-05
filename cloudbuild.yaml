@@ -1,4 +1,15 @@
 steps:
+  # send notification to slack
+    - name: 'gcr.io/cloud-builders/curl'
+      args:
+      - -X
+      - POST
+      - https://hooks.slack.com/services/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
+      - -H
+      - 'Content-type: application/json'
+      - --data
+      - '{"text":"This is a line of text in a channel.\nAnd this is another line of text."}'
+      
     - name: 'gcr.io/cloud-builders/npm'
       dir: hackstr
       args: ['install']
@@ -9,13 +20,4 @@ steps:
       dir: hackstr/build
       entrypoint: 'gsutil'
       args: ['cp', '-r', '.', 'gs://hackstr.couchforce.com']
- # send notification to slack
-    - name: gcr.io/cloud-builders/curl
-      args:
-      - -X
-      - POST
-      - -H
-      - 'Content-type: application/json'
-      - --data
-      - '{"text":"New deployment done! --> http://http://hackstr.couchforce.com/"}'
-      - https://hooks.slack.com/services/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
+

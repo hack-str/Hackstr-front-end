@@ -17,6 +17,10 @@ let couchListing = {
 
 export class Couch extends Component {
 
+    const [modal: any, setModal: any] = useState(false);
+
+    const toggle = () => setModal(!modal);
+
     render(){
         return (<section id="CouchSection" >
         <Container>
@@ -33,9 +37,9 @@ export class Couch extends Component {
         <Row>
         <Col><span className="Label">Description: </span>{couchListing.description}</Col>
         </Row>
-        <div><button id="CouchButton" color="Primary">Contact Host</button></div>
+        <div><button id="CouchButton" color="Primary" onClick={this.toggle}>Contact Host</button></div>
         </Container>
-        <Modal>
+        <Modal isOpen={modal} toggle={toggle}>
             <ModalHeader>
                 Submit a message to this host.
             </ModalHeader>
