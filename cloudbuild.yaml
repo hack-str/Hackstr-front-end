@@ -9,3 +9,13 @@ steps:
       dir: hackstr/build
       entrypoint: 'gsutil'
       args: ['cp', '-r', '.', 'gs://hackstr.couchforce.com']
+ # send notification to slack
+    - name: gcr.io/cloud-builders/curl
+      args:
+      - -X
+      - POST
+      - -H
+      - 'Content-type: application/json'
+      - --data
+      - '{"text":"New deployment done! --> http://http://hackstr.couchforce.com/"}'
+      - https://hooks.slack.com/services/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
