@@ -5,6 +5,7 @@ import { CouchNav } from './components/routing/CouchNav';
 import { Switch, Route } from 'react-router';
 import CouchList from './components/CouchList/CouchList';
 import { userInfo } from 'os';
+import Couch from './components/Couch/Couch';
 
 const App: React.FC = () => {
   const logo={
@@ -23,7 +24,7 @@ const App: React.FC = () => {
       <Switch>
         {/* <Route path='/login' component={Login}/>
         <Route path='createCouch' component={CreateCouch}/> */}
-        {/* <Route path= '/couch/:id' component={Couch}/> */}
+        <Route path= '/couch/:id' component={Couch}/>
         <Route component={CouchList}/>
       </Switch>
     </div>
