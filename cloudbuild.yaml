@@ -3,12 +3,13 @@ steps:
     - name: gcr.io/cloud-builders/curl
       args:
       - -X
+      - https://hooks.slack.com/services/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
       - POST
       - -H
       - 'Content-type: application/json'
       - --data
-      - 'payload={"text":"This is a line of text in a channel.\nAnd this is another line of text."}'
-      - https://hooks.slack.com/services/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
+      - '{"text":"This is a line of text in a channel.\nAnd this is another line of text."}'
+      
     - name: 'gcr.io/cloud-builders/npm'
       dir: hackstr
       args: ['install']
