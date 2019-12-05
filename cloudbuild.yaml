@@ -6,6 +6,6 @@ steps:
       dir: hackstr
       args: ['run', 'build']
     - name: 'gcr.io/cloud-builders/gcloud'
-      dir: hackstr
+      dir: hackstr/build
       entrypoint: 'gsutil'
-      args: ['cp', '-r', 'build', 'gs://hackstr.couchforce.com']
+      args: ['cp', '.', 'gs://hackstr.couchforce.com']
