@@ -11,42 +11,61 @@ let couchListing = {
     rentPrice: 0,
     isActive: false,
     description: '',
-    pictureUrl: 'https://via.placeholder.com/400x90.png'
+    pictureUrl: ''
+}
+
+function CreateListing() {
+    
 }
 
 
 export class CreateCouch extends Component {
+    constructor(props: any){
+        super(props);
+        this.state = couchListing;
+    }
+
+    updateAddress(event: any) {
+        this.setState({address: event.target.value})
+    }
+
+    updateRent(event: any) {
+        this.setState({rentPrice: event.target.value})
+    }
+
+    updateDescription(event: any) {
+        this.setState({description: event.target.value})
+    }
+
+    updateImage(event: any) {
+        this.setState({pictureUrl: event.target.value})
+    }
 
     render(){
         return (<section id="CreateCouchSection" >
-            <form>
-                <FormGroup>
-                    <label>Host
-                    </label>
-                    <output>{couchListing.userId}</output>
-                </FormGroup>
+            <form onSubmit={CreateListing}>
                 <FormGroup>
                     <label>Address
                     </label>
-                    <input type="Text">
+                    <input id="CCAddress" type="Text" onChange={this.updateAddress}>
                     </input>
                 </FormGroup>
                 <FormGroup>
                     <label>Rental Cost
                     </label>
-                    <input type="Decimal">
+                    <input id="CCRentPrice" type="Decimal" onChange={this.updateRent}>
                     </input>
                 </FormGroup>
                 <FormGroup>
                     <label>Description
                     </label>
-                    <input type="TextArea">
+                    <input id="CCDescription" type="TextArea" onChange={this.updateDescription}>
                     </input>
                 </FormGroup>
                 <FormGroup>
                     <label>Image URL
                     </label>
-                    <input type="Text">
+                    <input id="CCImage" type="Text" onChange={this.updateImage}>
                     </input>
                 </FormGroup>
                 <button id="CreateCouchButton" color="Primary">Create Listing</button>
