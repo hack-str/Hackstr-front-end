@@ -26,19 +26,19 @@ export class CreateCouch extends Component {
     }
 
     updateAddress(event: any) {
-        this.setState({address: event.target.value})
+        //this.setState({address: event.target.value})
     }
 
     updateRent(event: any) {
-        this.setState({rentPrice: event.target.value})
+        //this.setState({rentPrice: event.target.value})
     }
 
     updateDescription(event: any) {
-        this.setState({description: event.target.value})
+       // this.setState({description: event.target.value})
     }
 
     updateImage(event: any) {
-        this.setState({pictureUrl: event.target.value})
+       // this.setState({pictureUrl: event.target.value})
     }
 
     render(){
