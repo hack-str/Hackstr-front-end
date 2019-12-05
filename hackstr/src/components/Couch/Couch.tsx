@@ -11,7 +11,7 @@ let couchListing = {
     rentPrice: 0,
     isActive: false,
     description: '',
-    pictureUrl: 'https://via.placeholder.com/400x90.png'
+    pictureUrl: 'https://cdn.dribbble.com/users/897730/screenshots/4233025/coffeecode-logo.jpg'
 }
 
 

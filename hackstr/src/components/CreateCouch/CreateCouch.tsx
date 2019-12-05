@@ -42,8 +42,9 @@ export class CreateCouch extends Component {
     }
 
     render(){
-        return (<div id="formpage"><div className="col-6" >
-            <Form id="form" onSubmit={CreateListing}>
+        return (<div id="formpage">
+            <div className="align-self-center" >
+            <Form id="form" className="col-6 align-self-center" onSubmit={CreateListing}>
                 <FormGroup>
                     <Label for="CCAddress">Address</Label>
                     <Input id="CCAddress" type="text" onChange={this.updateAddress}>
