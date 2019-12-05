@@ -4,16 +4,20 @@ import React, { Component } from "react";
 import "./CouchList.css";
 import MicroCouch from "./MicroCouch";
 import { getListings } from "../../http/Listing";
+import { start } from 'repl';
 
 interface Istate {
     microcouches: any[];
-    inputField: string
+    selectedmicrocouches: any[];
+    inputField: string;
 }
 class CouchList extends Component {
     constructor(props: any) {
         super(props);
+        const startingArray = [{ address: "Robert C" }, { address: "The Steve" }, { address: "Carolyn" }, { address: "Ravi" }];
         this.state = {
-            microcouches: [{ address: "Robert C" }, { address: "The Steve" }, { address: "Carolyn" }, { address: "Ravi" }],
+            microcouches: startingArray,
+            selectedmicrocouches: startingArray,
             inputField: ""
         };
     }
@@ -30,11 +34,14 @@ class CouchList extends Component {
                 <div className="row">
                     <div className="col-3">
                         <div className="filterSection curveEdge hidden">
-                            <h2> working</h2>
+                            <h3> Filter Selection</h3>
+                            <input type="text" placeholder=" filter field"
+                            onChange= {(event)=>{this.state.inputField=event.target.value}}></input>
+                            <button id="filterButton" className= "btn btn-info btn-sm" onClick={this.inputFieldChanged}>Trigger Filter</button>
                         </div>
                     </div>
                     <div className="col-9">
-                        <table className="table curveEdge bg hidden">
+                        <table className="table curveEdge listbg hidden">
                             <thead>
                                 <tr id="customHeaderRow curveEdge">
                                     <th scope="col">
@@ -43,7 +50,7 @@ class CouchList extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {this.state.microcouches.map((villain, index) => {
+                                {this.state.selectedmicrocouches.map((villain, index) => {
                                     return (
                                         <tr className="customRows" key={index}>
                                             <td>
@@ -62,17 +69,32 @@ class CouchList extends Component {
         );
     }
 
-    /* getInputField = () =>{
+    getInputField = () =>{
           return this.state.inputField;
       }
   
-      inputFieldChanged = (event) =>{
-          this.setState({
+      inputFieldChanged = () =>{
+           /*  inputFieldTemp: String = event.target.value.toLocaleLowerCase(); */
+
+          /* this.setState({
               inputField: event.target.value
+            }); */
+            console.log(this.state.inputField);
+
+
+            this.setState({
+                selectedmicrocouches:
+                    this.state.inputField ? this.state.microcouches.filter(
+                        (couches) => couches.address
+                        .toLocaleLowerCase()
+                        .indexOf(this.state.inputField.toLocaleLowerCase())
+                        !== -1) : this.state.microcouches
+                    
             });
+
       }
   
-      addVillain = (event) => {
+      /* addVillain = (event) => {
           if (event.preventDefault)
               event.preventDefault();
           else
@@ -80,7 +102,7 @@ class CouchList extends Component {
       
           this.state.bounties.push(this.state.inputField);
           this.setState({bounties: this.state.bounties});
-      } */
+      }  */
 }
 
 export default CouchList;
