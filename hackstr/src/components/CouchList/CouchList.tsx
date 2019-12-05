@@ -5,21 +5,18 @@ import MicroCouch from './MicroCouch';
 class CouchList extends Component {
 
     state = {
-        microcouches: ['Danny Boy', 'Pandora', 'Lilith', 'Mars', 'Sierissa'],
+        microcouches: ['Robert C', 'The Steve', 'Carolyn', 'Ravi'],
         inputField: ''
     }
 
     render() {
         return (
             <div className="CouchList">
-                <table className="table table-dark table-striped">
-                    <thead className="thead-light">
-                        <tr>
+                <table className="table curveEdge bg hidden">
+                    <thead>
+                        <tr id="customHeaderRow curveEdge">
                             <th scope="col">
-                                <h2>PANIC!</h2>
-                            </th>
-                            <th scope="col">
-                                <h2>ATTACK!</h2>
+                                <h2>Couch Listings</h2>
                             </th>
                         </tr>
                     </thead>
@@ -27,9 +24,8 @@ class CouchList extends Component {
                         {this.state.microcouches.map(
                             villain => {
                                 return (
-                                    <tr className="Bounty" key={villain}>
+                                    <tr className="customRows" key={villain}>
                                         <td><MicroCouch>{villain}</MicroCouch></td>
-                                        <th scope="row">12/5</th>
                                     </tr>
                                 )
                             }
