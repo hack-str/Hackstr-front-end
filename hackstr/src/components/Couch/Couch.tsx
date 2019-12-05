@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './Couch.css';
 import { Container, Col, Row } from 'reactstrap';
@@ -14,8 +14,9 @@ let couchListing = {
     pictureUrl: ''
 }
 
-const Couch = (props: any) => {
-    return <section id="CouchSection" >
+class Couch extends Component {
+    render(){
+        return (<section id="CouchSection" >
         <Container>
         <Row>
         <Col><img id="CouchImage" src="{couchListing.pictureUrl}" /></Col>
@@ -29,8 +30,11 @@ const Couch = (props: any) => {
         <div><span className="Label">Description: </span>{couchListing.description}</div>
         <div><button id="CouchButton" color="Primary">Contact Host</button></div>
         </Container>
-    </section>
+        
+    </section>)
+    }
 }
+
 
 
 export default Couch;
