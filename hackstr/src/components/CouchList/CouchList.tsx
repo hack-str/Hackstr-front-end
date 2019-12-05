@@ -12,9 +12,9 @@ class CouchList extends Component {
     render() {
         return (
             <div className="CouchList">
-                <table className="table table-dark table-striped">
-                    <thead className="thead-light">
-                        <tr>
+                <table className="table curveEdge bg">
+                    <thead>
+                        <tr id="customHeaderRow">
                             <th scope="col">
                                 <h2>PANIC!</h2>
                             </th>
