@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './CouchList.css';
 import MicroCouch from './MicroCouch';
+import { Link } from 'react-router-dom';
 
 class CouchList extends Component {
 
     state = {
-        microcouches: ['Robert C', 'The Steve', 'Carolyn', 'Ravi'],
+        microcouches: ['Petronilo-senpai', 'Robert C', 'The Steve', 'Carolyn', 'Ravi'],
         inputField: ''
     }
 
@@ -25,7 +26,9 @@ class CouchList extends Component {
                             villain => {
                                 return (
                                     <tr className="customRows" key={villain}>
+                                            <Link to="/couch/:id">
                                         <td><MicroCouch>{villain}</MicroCouch></td>
+                                        </Link>
                                     </tr>
                                 )
                             }
