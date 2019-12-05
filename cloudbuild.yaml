@@ -4,12 +4,9 @@ steps:
       args:
       - -X
       - POST
+      - --data-urlencode
+      - payload={\"channel\": \"#hackster-cicd\", \"username\": \"webhookbot\", \"text\": \"This is posted to #hackster-cicd and comes from a bot named webhookbot.\", \"icon_emoji\": \":ghost:\"}"
       - https://hooks.slack.com/services/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
-      - -H
-      - 'Content-type: application/json'
-      - --data
-      - '{"text":"This is a line of text in a channel.\nAnd this is another line of text."}'
-      
     - name: 'gcr.io/cloud-builders/npm'
       dir: hackstr
       args: ['install']
@@ -20,4 +17,3 @@ steps:
       dir: hackstr/build
       entrypoint: 'gsutil'
       args: ['cp', '-r', '.', 'gs://hackstr.couchforce.com']
-
