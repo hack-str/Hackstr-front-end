@@ -3,8 +3,8 @@ steps:
     - name: gcr.io/cloud-builders/curl
       args:
       - -X
-      - https://hooks.slack.com/services/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
       - POST
+      - https://hooks.slack.com/services/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
       - -H
       - 'Content-type: application/json'
       - --data
