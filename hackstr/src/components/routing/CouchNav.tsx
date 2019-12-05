@@ -15,17 +15,17 @@ export const CouchNav: React.FC<any> = (props: any) => {
   // const username = 'user';
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen(prevState => !prevState);
-
+  console.log(props.username);
   return (
     <div>
-      <Navbar>
+      <Navbar color='dark'>
           <Link to="">
-            <img style={props.iconStyle} alt='this is an image' />
+            <img style={props.iconStyle} src={props.iconStyle.src}alt='this is an image' />
           </Link>
-          {props.username !=='' ? (
+          {!props.username ? (
             <Button>Sign in</Button>
           ) : (
-            <UserOptions dropDownOpen={dropdownOpen} toggle={toggle} />
+            <UserOptions username={props.username} dropDownOpen={dropdownOpen} toggle={toggle} onClick={toggle} />
           )}
       </Navbar>
     </div>
