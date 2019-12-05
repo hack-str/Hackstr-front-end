@@ -42,8 +42,8 @@ export class CreateCouch extends Component {
     }
 
     render(){
-        return (<div className="col-6">
-            <Form onSubmit={CreateListing}>
+        return (<div id="formpage"><div className="col-6" >
+            <Form id="form" onSubmit={CreateListing}>
                 <FormGroup>
                     <Label for="CCAddress">Address</Label>
                     <Input id="CCAddress" type="text" onChange={this.updateAddress}>
@@ -70,6 +70,7 @@ export class CreateCouch extends Component {
                 <Button id="CreateCouchButton" color="Primary">Create Listing</Button>
 
             </Form>
+    </div>
     </div>)
     }
 }
