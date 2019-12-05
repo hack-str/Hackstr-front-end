@@ -11,10 +11,10 @@ let couchListing = {
     rentPrice: 0,
     isActive: false,
     description: '',
-    pictureUrl: ''
+    pictureUrl: 'https://via.placeholder.com/400x90.png'
 }
 
-class Couch extends Component {
+export class Couch extends Component {
     render(){
         return (<section id="CouchSection" >
         <Container>
@@ -23,11 +23,15 @@ class Couch extends Component {
         <Col><span className="Label">Listing Name: </span>{couchListing.id}</Col>
         </Row>
         <Row>
-        <div><span className="Label">Host: </span>{couchListing.userId}</div>
-        <div><span className="Label">Address: </span>{couchListing.address}</div>
+        <Col><span className="Label">Host: </span>{couchListing.userId}</Col>
+        <Col><span className="Label">Address: </span>{couchListing.address}</Col>
         </Row>
-        <div><span className="Label">Rental Price: </span>{couchListing.rentPrice}</div>
-        <div><span className="Label">Description: </span>{couchListing.description}</div>
+        <Row>
+        <Col><span className="Label">Rental Price: </span>{couchListing.rentPrice}</Col>
+        </Row>
+        <Row>
+        <Col><span className="Label">Description: </span>{couchListing.description}</Col>
+        </Row>
         <div><button id="CouchButton" color="Primary">Contact Host</button></div>
         </Container>
         
