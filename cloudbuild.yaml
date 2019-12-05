@@ -1,10 +1,10 @@
 steps:
   # send notification to slack
-    - name: gcr.io/cloud-builders/curl
+    - name: 'gcr.io/cloud-builders/curl'
       args:
       - -X
       - POST
-      - https://hooks.slack.com/services/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
+      - https://hooks.slack.com/services/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
       - -H
       - 'Content-type: application/json'
       - --data
