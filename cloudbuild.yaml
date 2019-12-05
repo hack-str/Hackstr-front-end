@@ -1,11 +1,11 @@
 steps:
-    - name: gcr.io/cloudbuilders/npm
+    - name: 'gcr.io/cloudbuilders/npm'
       dir: hackstr
       args: ['install']
-    - name: gcr.io/cloudbuilders/npm
+    - name: 'gcr.io/cloudbuilders/npm'
       dir: hackstr
       args: ['run', 'build']
-    - name: gcr.io/cloudbuilders/gcloud
+    - name: 'gcr.io/cloudbuilders/gcloud'
       dir: hackstr
       entrypoint: 'gsutil'
       args: ['cp', '-r', 'build', 'gs://hackstr.couchforce.com']
