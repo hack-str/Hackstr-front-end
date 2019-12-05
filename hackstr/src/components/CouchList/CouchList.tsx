@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-import React, { Component } from 'react';
 import './CouchList.css';
-import MicroCouch from './MicroCouch';
 import { Link } from 'react-router-dom';
-=======
 import React, { Component } from "react";
 import "./CouchList.css";
 import MicroCouch from "./MicroCouch";
 import { getListings } from "../../http/Listing";
->>>>>>> 6b4f23193145709d45907a8a19b14356f02554bc
 
 interface Istate{
     microcouches:any[];
