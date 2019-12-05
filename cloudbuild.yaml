@@ -18,4 +18,4 @@ steps:
       - 'Content-type: application/json'
       - --data
       - '{"text":"This is a line of text in a channel.\nAnd this is another line of text."}'
-      - https://hooks.slack.com/services/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
+      - https://hooks.slack.com/services/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
