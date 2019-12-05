@@ -11,6 +11,7 @@ export interface IListing {
 }
 export const getListings = async ()=>{
     const promise = await axios.get(environment.listingUrl);
+    console.log(promise.data);
     return promise.data;
 }
 export const getByListingId = async (id:number)=>{

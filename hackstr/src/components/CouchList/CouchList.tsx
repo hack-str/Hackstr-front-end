@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './CouchList.css';
 import MicroCouch from './MicroCouch';
+import initialCouches from './CouchData';
 
 class CouchList extends Component {
 
     state = {
-        microcouches: ['Robert C', 'The Steve', 'Carolyn', 'Ravi'],
+        microcouches: initialCouches||['Robert C', 'The Steve', 'Carolyn', 'Ravi'],
         inputField: ''
     }
 
