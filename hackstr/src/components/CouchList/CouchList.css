@@ -15,10 +15,11 @@
 }
 
 .filterSection {
-    background-color: rgba(50, 50, 50, 0.25);
+    background-color: rgba(75, 75, 75, 0.10);
+    padding: 1vw;
 }
 
-.bg {
+.listbg {
     overflow: hidden;
 	background: url('https://www.sofa-dreams.com/artikelbilder/nord-sofa-mit-streifen/concept/U-Form/beige/ledersofa_modulsofa_concept_u_led_beige_1.jpg') no-repeat;
 	background-size: 100% 150%;
@@ -46,4 +47,8 @@ tr {
 .customRows{
     margin: 1px;
 
+}
+
+#filterButton {
+    margin: 5px;
 }
