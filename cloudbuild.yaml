@@ -5,7 +5,7 @@ steps:
       - -X
       - POST
       - --data-urlencode
-      - payload={\"channel\": \"#hackster-cicd\", \"username\": \"webhookbot\", \"text\": \"This is posted to #hackster-cicd and comes from a bot named webhookbot.\", \"icon_emoji\": \":ghost:\"}"
+      - 'payload={\"channel\": \"#hackster-cicd\", \"username\": \"webhookbot\", \"text\": \"This is posted to #hackster-cicd and comes from a bot named webhookbot.\", \"icon_emoji\": \":ghost:\"}"'
       - https://hooks.slack.com/services/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
     - name: 'gcr.io/cloud-builders/npm'
       dir: hackstr
