@@ -1,7 +1,8 @@
 steps:
   # send notification to slack
-    - name: 'gcr.io/cloud-builders/curl'
+    - name: 'gcr.io/cloud-builders/gcloud'
       dir: hackstr
+      entrypoint: 'curl'
       args: ['-X', 'POST', "--data-urlencode", "payload={\"channel\": \"#hackster-cicd\", \"username\": \"webhookbot\", \"text\": \" Building react to hackster.couchforce.com\", \"icon_emoji\": \":ghost:\"}", "https://hooks.slack.com/services/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"]
     - name: 'gcr.io/cloud-builders/npm'
       dir: hackstr
