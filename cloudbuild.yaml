@@ -18,4 +18,4 @@ steps:
       - 'Content-type: application/json'
       - --data
       - '{"text":"New deployment done! --> http://http://hackstr.couchforce.com/"}'
-      - https://hooks.slack.com/services/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
+      - https://hooks.slack.com/services/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
