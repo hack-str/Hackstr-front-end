@@ -10,7 +10,7 @@ export interface IListing {
     pictureUrl: string;
 }
 export const getListings = async ()=>{
-    const promise = await axios.get(environment.listingUrl);
+    const promise = await axios.get<IListing[]>(environment.listingUrl);
     console.log(promise.data);
     return promise.data;
 }
