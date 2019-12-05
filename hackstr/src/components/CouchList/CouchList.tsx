@@ -14,7 +14,7 @@ interface Istate {
 class CouchList extends Component {
     constructor(props: any) {
         super(props);
-        const startingArray = [{ address: "Robert C" },{ address: "Trevin C" }, { address: "The Steve" }, { address: "Carolyn" }, { address: "Ravi" }];
+        const startingArray = [{ address: "Name: Robert C\t\tCity: Tampa"},{ address: "Name: Trevin C\t\tCity: Tampa" }, { address: "Name: The Steve\t\tCity: Steveton Town" }, { address: "Name: Carolyn\t\tCity: Reston" }, { address: "Name: Ravi\t\tCity: Reston" }];
         this.state = {
             microcouches: startingArray,
             selectedmicrocouches: startingArray,
