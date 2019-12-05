@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router';
 import CouchList from './components/CouchList/CouchList';
 import { userInfo } from 'os';
 import Couch from './components/Couch/Couch';
+import Login from './components/Login/Login';
 
 const App: React.FC = () => {
   const logo={
@@ -22,8 +23,8 @@ const App: React.FC = () => {
     <CouchNav username={user.email} iconStyle={logo}/>
     <div>
       <Switch>
-        {/* <Route path='/login' component={Login}/>
-        <Route path='createCouch' component={CreateCouch}/> */}
+        { <Route path='/login' component={Login}/>
+        /*<Route path='createCouch' component={CreateCouch}/> */}
         <Route path= '/couch/:id' component={Couch}/>
         <Route component={CouchList}/>
       </Switch>

@@ -1,0 +1,20 @@
+.bg {
+	background: url('https://piitgroup.com/i/2019/06/fabric-black-connor-sectional-markus-reclining-recliner-power-rooms-living-matteo-force-contemporary-and-motion-esofastore-grey-air-white-costco-couch-sneakers.jpg') no-repeat;
+	background-size: 100% 120%;
+	width: 100vw;
+    height: 100vh;
+}
+
+.backgroundcolor{
+	background-color: rgba(0, 0, 0, 0.50);
+}
+
+.form-container {
+    color: white;
+    border: 1px solid;
+	padding: 20px 20px;
+	margin-top: 20%;
+	-webkit-box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.75);
+}
