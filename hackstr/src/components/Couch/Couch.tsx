@@ -33,7 +33,7 @@ export class Couch extends Component {
         return (<section id="CouchSection" >
         <Container id="couchcontainer">
         <Row>
-        <Col><img id="CouchImage" src="{couchListing.pictureUrl}" /></Col>
+        <Col><img id="CouchImage" src={couchListing.pictureUrl} height="200" width="200" /></Col>
         </Row>
         <Row>
         <Col><span className="Label">Host: </span>{couchListing.userId}</Col>
