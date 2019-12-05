@@ -8,6 +8,7 @@ import { userInfo } from 'os';
 import Couch from './components/Couch/Couch';
 import Login from './components/Login/Login';
 import { getUsers, IUser, getUserById } from './http/User';
+import CreateCouch from './components/CreateCouch/CreateCouch';
 
 const App: React.FC = () => {
   const logo={
@@ -34,8 +35,8 @@ const App: React.FC = () => {
     <CouchNav username={user.email} iconStyle={logo}/>
     <div>
       <Switch>
-        { <Route path='/login' component={Login}/>
-        /*<Route path='createCouch' component={CreateCouch}/> */}
+        <Route path='/login' component={Login}/>
+        <Route path='/createCouch' component={CreateCouch}/>
         <Route path= '/couch/:id' component={Couch}/>
         <Route component={CouchList}/>
       </Switch>

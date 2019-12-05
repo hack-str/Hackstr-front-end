@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import ReactDOM from 'react-dom';
-import './Couch.css';
+import './CreateCouch.css';
 import { Container, Col, Row, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup } from 'reactstrap';
 
 
