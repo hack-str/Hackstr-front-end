@@ -13,29 +13,37 @@ class CouchList extends Component {
     render() {
         return (
             <div className="CouchList">
-                <table className="table curveEdge bg hidden">
-                    <thead>
-                        <tr id="customHeaderRow curveEdge">
-                            <th scope="col">
-                                <h2>Couch Listings</h2>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.microcouches.map(
-                            villain => {
-                                return (
-                                    <tr className="customRows" key={villain}>
-                                            <Link to="/couch/:id">
-                                        <td><MicroCouch>{villain}</MicroCouch></td>
-                                        </Link>
-                                    </tr>
-                                )
-                            }
-                        )}
-                    </tbody>
-                </table>
-
+                <div className="row">
+                    <div className="col-3">
+                        <div className="filterSection curveEdge hidden">
+                            <h2> working</h2>
+                        </div>
+                    </div>
+                    <div className="col-9">
+                        <table className="table curveEdge bg hidden">
+                            <thead>
+                                <tr id="customHeaderRow curveEdge">
+                                    <th scope="col">
+                                        <h2>Couch Listings</h2>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.microcouches.map(
+                                    villain => {
+                                        return (
+                                            <tr className="customRows" key={villain}>
+                                                <Link to="/couch/:id">
+                                                    <td><MicroCouch>{villain}</MicroCouch></td>
+                                                </Link>
+                                            </tr>
+                                        )
+                                    }
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 {/* <form onSubmit={this.addVillain}>
                     <div className="form-group">
                         <label >Add a villain</label>

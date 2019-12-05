@@ -2,11 +2,6 @@
     overflow: hidden;
 }
 
-.CouchList {
-    margin: 2vw;
-    text-align: center;
-}
-
 .curveEdge{
     border-radius: 30px 30px 30px 30px;
     -moz-border-radius: 30px 30px 30px 30px;
@@ -14,12 +9,15 @@
     border: 0px solid #000000;
 }
 
-tr {
-    margin: 0vh;
-    width: fit-content;
-    background-color: rgba(225, 225, 225, 0.5);
+
+.CouchList {
+    margin: 1vw;
+    text-align: center;
 }
 
+.filterSection {
+    background-color: rgba(50, 50, 50, 0.25);
+}
 
 .bg {
     overflow: hidden;
@@ -31,6 +29,12 @@ tr {
     -moz-border-radius: 30px 30px 30px 30px;
     -webkit-border-radius: 30px 30px 30px 30px;
     border: 0px solid #000000;
+}
+
+tr {
+    margin: 0vh;
+    width: fit-content;
+    background-color: rgba(225, 225, 225, 0.5);
 }
 
 #customHeaderRow{
