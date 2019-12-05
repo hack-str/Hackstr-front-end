@@ -17,9 +17,17 @@ let couchListing = {
 
 export class Couch extends Component {
 
-    const [modal: any, setModal: any] = useState(false);
-
-    const toggle = () => setModal(!modal);
+    constructor(props: any){
+        super(props);
+        this.state = {active: false};
+    }
+    state:{active:boolean};
+    togglevalue!: boolean;
+ 
+    toggle = () => { 
+        this.togglevalue = this.state.active;
+        this.setState({active: !this.state.active});
+    }
 
     render(){
         return (<section id="CouchSection" >
@@ -39,7 +47,8 @@ export class Couch extends Component {
         </Row>
         <div><button id="CouchButton" color="Primary" onClick={this.toggle}>Contact Host</button></div>
         </Container>
-        <Modal isOpen={modal} toggle={toggle}>
+        
+        <Modal isOpen={this.state.active} toggle={this.toggle}>
             <ModalHeader>
                 Submit a message to this host.
             </ModalHeader>
@@ -47,7 +56,7 @@ export class Couch extends Component {
                 <textarea id="couchSubmission"></textarea>
             </ModalBody>
             <ModalFooter>
-                <button id="SubmitEmail" color="Success">Send Message</button>
+                <button id="SubmitEmail" color="Success" onClick={this.toggle}>Send Message</button>
             </ModalFooter>
         </Modal>
         
