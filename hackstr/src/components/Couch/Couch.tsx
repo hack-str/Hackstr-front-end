@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import ReactDOM from 'react-dom';
 import './Couch.css';
-import { Container, Col, Row, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Container, Col, Row, Modal, ModalHeader, ModalBody, ModalFooter, Form, Input, Button } from 'reactstrap';
 
 
 let couchListing = {
@@ -53,10 +53,15 @@ export class Couch extends Component {
                 Submit a message to this host.
             </ModalHeader>
             <ModalBody>
-                <textarea id="couchSubmission"></textarea>
+                <Form>
+                    <Input id="couchSubmission" type="textarea">
+                        
+                    </Input>
+                </Form>
             </ModalBody>
             <ModalFooter>
-                <button id="SubmitEmail" color="Success" onClick={this.toggle}>Send Message</button>
+                <Button color="Secondary" onClick={this.toggle}>Cancel</Button>
+                <Button id="SubmitEmail" color="Primary" onClick={this.toggle}>Send Message</Button>
             </ModalFooter>
         </Modal>
         

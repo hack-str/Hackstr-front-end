@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import ReactDOM from 'react-dom';
 import './CreateCouch.css';
-import { Container, Col, Row, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup } from 'reactstrap';
+import { Container, Col, Row, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input, Button, Form } from 'reactstrap';
 
 
 let couchListing = {
@@ -42,36 +42,35 @@ export class CreateCouch extends Component {
     }
 
     render(){
-        return (<section id="CreateCouchSection" >
-            <form onSubmit={CreateListing}>
+        return (<div className="col-6">
+            <Form onSubmit={CreateListing}>
                 <FormGroup>
-                    <label>Address
-                    </label>
-                    <input id="CCAddress" type="Text" onChange={this.updateAddress}>
-                    </input>
+                    <Label for="CCAddress">Address</Label>
+                    <Input id="CCAddress" type="text" onChange={this.updateAddress}>
+                    </Input>
                 </FormGroup>
                 <FormGroup>
-                    <label>Rental Cost
-                    </label>
-                    <input id="CCRentPrice" type="Decimal" onChange={this.updateRent}>
-                    </input>
+                    <Label for="CCRentPrice">Rental Cost
+                    </Label>
+                    <Input id="CCRentPrice" type="number" onChange={this.updateRent}>
+                    </Input>
                 </FormGroup>
                 <FormGroup>
-                    <label>Description
-                    </label>
-                    <input id="CCDescription" type="TextArea" onChange={this.updateDescription}>
-                    </input>
+                    <Label for="CCDescription">Description
+                    </Label>
+                    <Input id="CCDescription" type="textarea" onChange={this.updateDescription}>
+                    </Input>
                 </FormGroup>
                 <FormGroup>
-                    <label>Image URL
-                    </label>
-                    <input id="CCImage" type="Text" onChange={this.updateImage}>
-                    </input>
+                    <Label for="CCImage">Image URL
+                    </Label>
+                    <Input id="CCImage" type="text" onChange={this.updateImage}>
+                    </Input>
                 </FormGroup>
-                <button id="CreateCouchButton" color="Primary">Create Listing</button>
+                <Button id="CreateCouchButton" color="Primary">Create Listing</Button>
 
-            </form>
-    </section>)
+            </Form>
+    </div>)
     }
 }
 
